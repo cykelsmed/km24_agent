@@ -141,7 +141,7 @@ class KM24Client:
             }
 
             response = await self.client.post(
-                f"{KM24_BASE_URL}/steps/main",
+                f"{KM24_BASE_URL}/steps/main/",
                 json=step_data
             )
             response.raise_for_status()
@@ -200,7 +200,7 @@ class KM24Client:
             step_id: Step ID to delete
         """
         try:
-            response = await self.client.delete(f"{KM24_BASE_URL}/steps/main/{step_id}")
+            response = await self.client.delete(f"{KM24_BASE_URL}/steps/main/{step_id}/")
             response.raise_for_status()
             logger.info(f"Deleted step {step_id}")
 
